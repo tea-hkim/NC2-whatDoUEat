@@ -11,7 +11,7 @@ struct MainView: View {
     @State var isActionSheetShow: Bool = false
     var body: some View {
         ZStack {
-            Color.yellow.ignoresSafeArea()
+            Color.mainYellow.ignoresSafeArea()
             VStack {
                 // MARK: TitleBox Group
                 VStack {
@@ -69,7 +69,7 @@ struct TitleBox: View {
         HStack {
             Text(title)
                 .font(.system(size: isMiddleCharacter ? 76 : 72, weight: .bold))
-                .foregroundColor(isMiddleCharacter ? .blue : .black)
+                .foregroundColor(isMiddleCharacter ? .mainPurple : .black)
                 
             Spacer()
         }
