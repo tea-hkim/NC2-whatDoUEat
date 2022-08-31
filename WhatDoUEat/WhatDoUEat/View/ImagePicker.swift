@@ -52,20 +52,22 @@ struct ImagePicker : UIViewControllerRepresentable {
         private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?) {
             guard let predictions = predictions else { return }
 
-            print(formatPredictions(predictions))
+            self.picker.predictionVegetable = formatPredictions(predictions)[0]
         }
         
         private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
             // Vision sorts the classifications in descending confidence order.
             let topPredictions: [String] = predictions.prefix(1).map { prediction in
-                var name = prediction.classification
-                print(name)
+                let name = prediction.classification
                 // For classifications with more than one name, keep the one before the first comma.
-                if let firstComma = name.firstIndex(of: ",") {
-                    name = String(name.prefix(upTo: firstComma))
-                }
-
-                return "\(name) - \(prediction.confidencePercentage)%"
+                
+                // 여기는 분류를 하고 퍼센트를 붙이는 부분 나중이라면 필요할 것 같아서 남겨두기로 한다
+//                if let firstComma = name.firstIndex(of: ",") {
+//                    name = String(name.prefix(upTo: firstComma))
+//                }
+//
+//                return "\(name) - \(prediction.confidencePercentage)%"
+                return name
             }
             return topPredictions
         }
@@ -77,11 +79,13 @@ struct ImagePicker : UIViewControllerRepresentable {
             
             let data = selectedImage.pngData()
             self.picker.selectedImage = data!
-            self.picker.isPresented.toggle()
             
             DispatchQueue.global(qos: .userInitiated).async {
                 self.classifyImage(selectedImage)
             }
+            
+            self.picker.isPresented.toggle()
+            
         }
     }
 }

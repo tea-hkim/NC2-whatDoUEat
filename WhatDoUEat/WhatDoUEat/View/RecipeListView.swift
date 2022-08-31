@@ -8,49 +8,59 @@
 import SwiftUI
 
 struct RecipeListView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var vegetableName: String
     let dummyData: [String] = ["가지", "호박","가지", "호박","가지", "호박","가지", "호박","가지", "호박","가지", "호박","가지", "호박","가지", "호박","가지", "호박",]
     
     var body: some View {
-        VStack {
-            RecipeListTitle(ingredient: "가지")
-            ZStack {
-                List {
-                    ForEach ( dummyData, id: \.self) {
-                        RecipeBox(recipeName: $0)
-                    }
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparator(.hidden)
-                }
-                .padding(0)
-                .listStyle(.plain)
-                VStack {
+        ZStack {
+            VStack {
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 25, weight: .bold))
+                            .padding(.bottom, 5)
+                            .tint(.black)
+                    })
                     Spacer()
-                    Button {
-                        print("리셋 버튼")
-                    } label: {
-                        RoundedRectangle(cornerRadius : 15)
-                            .stroke(.black, lineWidth: 3)
-                            .background(
-                                RoundedRectangle(cornerRadius : 15)
-                                    .fill(Color.buttonYello)
-                            )
-                            .frame(height: 63)
-                            .overlay(
-                                Text("이미지 추가하기")
-                                    .font(.system(size: 18, weight: .medium))
-                                    .foregroundColor(.black)
-                            )
+                }// HStack_BackButton
+                RecipeListTitle(ingredient: vegetableName)
+                ZStack {
+                    List {
+                        ForEach ( dummyData, id: \.self) {
+                            RecipeBox(recipeName: $0)
+                        }
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
+                    }
+                    .padding(0)
+                    .listStyle(.plain)
+                    VStack {
+                        Spacer()
+                        Button {
+                            print("리셋 버튼")
+                        } label: {
+                            RoundedRectangle(cornerRadius : 15)
+                                .stroke(.black, lineWidth: 3)
+                                .background(
+                                    RoundedRectangle(cornerRadius : 15)
+                                        .fill(Color.buttonYello)
+                                )
+                                .frame(height: 63)
+                                .overlay(
+                                    Text("이미지 추가하기")
+                                        .font(.system(size: 18, weight: .medium))
+                                        .foregroundColor(.black)
+                                )
+                        }
                     }
                 }
             }
-        }
+            .navigationBarHidden(true)
         .padding(.horizontal, 30)
-    }
-}
-
-struct RecipeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeListView()
+        }
     }
 }
 

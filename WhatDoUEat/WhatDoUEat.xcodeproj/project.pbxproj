@@ -16,9 +16,9 @@
 		904D43B428BF0D7E0062AA2D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904D43B328BF0D7E0062AA2D /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		904D43B628BF0D910062AA2D /* VNClassificationObservation+confidenceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904D43B528BF0D910062AA2D /* VNClassificationObservation+confidenceString.swift */; };
 		904D43B928BF3E490062AA2D /* ImagePredictionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904D43B828BF3E490062AA2D /* ImagePredictionViewModel.swift */; };
+		904D43BE28BF58F80062AA2D /* DummyRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904D43BD28BF58F80062AA2D /* DummyRecipe.swift */; };
 		905C1A1728BE4F4600252108 /* VegetableClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 905C1A1628BE4F4600252108 /* VegetableClassifier.mlmodel */; };
 		9065AEC228BD9B190051455B /* WhatDoUEatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065AEC128BD9B190051455B /* WhatDoUEatApp.swift */; };
-		9065AEC428BD9B190051455B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065AEC328BD9B190051455B /* ContentView.swift */; };
 		9065AEC628BD9B1A0051455B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9065AEC528BD9B1A0051455B /* Assets.xcassets */; };
 		9065AEC928BD9B1A0051455B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9065AEC828BD9B1A0051455B /* Preview Assets.xcassets */; };
 		9065AEDD28BE40580051455B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065AEDC28BE40580051455B /* MainView.swift */; };
@@ -34,10 +34,10 @@
 		904D43B328BF0D7E0062AA2D /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		904D43B528BF0D910062AA2D /* VNClassificationObservation+confidenceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VNClassificationObservation+confidenceString.swift"; sourceTree = "<group>"; };
 		904D43B828BF3E490062AA2D /* ImagePredictionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictionViewModel.swift; sourceTree = "<group>"; };
+		904D43BD28BF58F80062AA2D /* DummyRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRecipe.swift; sourceTree = "<group>"; };
 		905C1A1628BE4F4600252108 /* VegetableClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VegetableClassifier.mlmodel; sourceTree = "<group>"; };
 		9065AEBE28BD9B190051455B /* WhatDoUEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDoUEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9065AEC128BD9B190051455B /* WhatDoUEatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatDoUEatApp.swift; sourceTree = "<group>"; };
-		9065AEC328BD9B190051455B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9065AEC528BD9B1A0051455B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9065AEC828BD9B1A0051455B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9065AEDC28BE40580051455B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -57,7 +57,6 @@
 		904D43A428BEE7BB0062AA2D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9065AEC328BD9B190051455B /* ContentView.swift */,
 				9065AEDC28BE40580051455B /* MainView.swift */,
 				904D43A528BEE7ED0062AA2D /* RecipeListView.swift */,
 				904D43A728BEE8080062AA2D /* RecipeDetailView.swift */,
@@ -119,6 +118,7 @@
 				9065AEC128BD9B190051455B /* WhatDoUEatApp.swift */,
 				9065AEC528BD9B1A0051455B /* Assets.xcassets */,
 				9065AEC728BD9B1A0051455B /* Preview Content */,
+				904D43BD28BF58F80062AA2D /* DummyRecipe.swift */,
 			);
 			path = WhatDoUEat;
 			sourceTree = "<group>";
@@ -213,7 +213,6 @@
 				904D43A828BEE8080062AA2D /* RecipeDetailView.swift in Sources */,
 				904D43A628BEE7ED0062AA2D /* RecipeListView.swift in Sources */,
 				904D43B628BF0D910062AA2D /* VNClassificationObservation+confidenceString.swift in Sources */,
-				9065AEC428BD9B190051455B /* ContentView.swift in Sources */,
 				904D43B428BF0D7E0062AA2D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				9065AEDD28BE40580051455B /* MainView.swift in Sources */,
 				904D43B028BF07B00062AA2D /* ImagePredictor.swift in Sources */,
@@ -221,6 +220,7 @@
 				904D43AA28BEE9AB0062AA2D /* RecipeModel.swift in Sources */,
 				905C1A1728BE4F4600252108 /* VegetableClassifier.mlmodel in Sources */,
 				904D43AD28BEF92C0062AA2D /* Color+Extension.swift in Sources */,
+				904D43BE28BF58F80062AA2D /* DummyRecipe.swift in Sources */,
 				904D43B928BF3E490062AA2D /* ImagePredictionViewModel.swift in Sources */,
 				904D43A328BEE43C0062AA2D /* ImagePicker.swift in Sources */,
 			);
@@ -361,6 +361,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,7 +371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -392,6 +393,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,7 +403,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

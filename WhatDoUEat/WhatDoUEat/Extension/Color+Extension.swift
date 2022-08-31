@@ -27,4 +27,5 @@ extension Color {
     static let buttonYello = Color(hex: "FEF339")
     static let mainPurple = Color(hex: "264796")
     static let lightYellow = Color(hex: "FFD426").opacity(0.2)
+    static let lightGray = Color(hex: "999999")
 }
