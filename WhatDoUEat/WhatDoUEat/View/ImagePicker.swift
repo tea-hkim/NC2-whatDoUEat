@@ -10,6 +10,8 @@ import SwiftUI
 struct ImagePicker : UIViewControllerRepresentable {
     @Binding var isPresented : Bool
     @Binding var selectedImage : Data
+    @Binding var predictionVegetable : String
+    
     var sourceType: UIImagePickerController.SourceType
     
     func makeCoordinator() -> ImagePicker.Coordinator {
@@ -28,6 +30,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     }
     
     class Coordinator : NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        let imagePredictor = ImagePredictor()
         var picker : ImagePicker
         init(picker : ImagePicker) {
             self.picker = picker
@@ -35,6 +38,36 @@ struct ImagePicker : UIViewControllerRepresentable {
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             self.picker.isPresented.toggle()
+        }
+        
+        private func classifyImage(_ image: UIImage) {
+            do {
+                try self.imagePredictor.makePredictions(for: image,
+                                                        completionHandler: imagePredictionHandler)
+            } catch {
+                print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
+            }
+        }
+        
+        private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?) {
+            guard let predictions = predictions else { return }
+
+            print(formatPredictions(predictions))
+        }
+        
+        private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
+            // Vision sorts the classifications in descending confidence order.
+            let topPredictions: [String] = predictions.prefix(1).map { prediction in
+                var name = prediction.classification
+                print(name)
+                // For classifications with more than one name, keep the one before the first comma.
+                if let firstComma = name.firstIndex(of: ",") {
+                    name = String(name.prefix(upTo: firstComma))
+                }
+
+                return "\(name) - \(prediction.confidencePercentage)%"
+            }
+            return topPredictions
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -49,18 +82,6 @@ struct ImagePicker : UIViewControllerRepresentable {
             DispatchQueue.global(qos: .userInitiated).async {
                 self.classifyImage(selectedImage)
             }
-        }
-    }
-}
-
-extension ImagePicker {
-    
-    private func classifyImage(_ image: UIImage) {
-        do {
-            try self.imagePredictor.makePredictions(for: image,
-                                                    completionHandler: imagePredictionHandler)
-        } catch {
-            print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
         }
     }
 }
