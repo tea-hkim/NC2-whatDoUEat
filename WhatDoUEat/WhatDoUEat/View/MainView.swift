@@ -35,17 +35,19 @@ struct MainView: View {
                             TitleBox(title: "해먹지?")
                         }
                         .padding(.top, 20)
-                        .padding(.leading, 5)
+                        .padding(.leading, 10)
+                        
+                        Spacer()
                         
                         if imageData.count != 0 {
                             Image(uiImage: UIImage(data: self.imageData)!)
                                 .resizable()
                                 .clipShape(Circle())
-                                .frame(width: 200, height: 200)
+                                .frame(width: 240, height: 240)
                         } else {
                             Image(systemName: "fork.knife.circle.fill")
                                 .resizable()
-                                .frame(width: 200, height: 200)
+                                .frame(width: 240, height: 240)
                         }
                         
                         Spacer()
@@ -103,7 +105,8 @@ struct MainView: View {
                                             .font(.system(size: 18, weight: .medium))
                                             .foregroundColor(.black)
                                     )
-                            }.disabled(predictinoVegetable.isEmpty)
+                            }
+                            .disabled(predictinoVegetable.isEmpty)
                         }
                     }.padding(.horizontal, 30)
                 }
@@ -127,7 +130,7 @@ struct TitleBox: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.system(size: isMiddleCharacter ? 76 : 72, weight: .bold))
+                .font(.system(size: isMiddleCharacter ? 68 : 60, weight: .bold))
                 .foregroundColor(isMiddleCharacter ? .mainPurple : .black)
             
             Spacer()
