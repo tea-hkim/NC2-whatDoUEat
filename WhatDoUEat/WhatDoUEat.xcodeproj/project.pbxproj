@@ -40,7 +40,6 @@
 		9065AEC328BD9B190051455B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9065AEC528BD9B1A0051455B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9065AEC828BD9B1A0051455B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9065AED328BDBBE50051455B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9065AEDC28BE40580051455B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +116,6 @@
 				904D43AE28BF07820062AA2D /* ImagePredictor */,
 				9065AED428BE3DD00051455B /* Models */,
 				904D43AB28BEF9190062AA2D /* Extension */,
-				9065AED328BDBBE50051455B /* Info.plist */,
 				9065AEC128BD9B190051455B /* WhatDoUEatApp.swift */,
 				9065AEC528BD9B1A0051455B /* Assets.xcassets */,
 				9065AEC728BD9B1A0051455B /* Preview Content */,
