@@ -1,3 +1,5 @@
+![배너](https://user-images.githubusercontent.com/81206228/188163810-9ef0cae8-cb45-4c27-b6b5-754822db308a.png)
+
 # WhatTheCook(이걸로 뭐해 먹지)
 
 ## 📍 Feature
