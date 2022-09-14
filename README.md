@@ -7,6 +7,9 @@
 2. 분류된 채소를 메인으로 하는 레시피 추천
 
 ## 🎆 Screenshots
+|메인뷰|메인뷰 사진추가|레시피 리스트|레시피 디테일|
+|:-:|:-:|:-:|:-:|
+|<img src="https://user-images.githubusercontent.com/81206228/190072150-5e868956-04d7-4de9-ae09-abcd7e24cefa.PNG" width="200"/>|<img src="https://user-images.githubusercontent.com/81206228/190072220-a631380e-56a2-4209-a479-8c96dc2f35b0.jpeg" width="200"/>|<img src="https://user-images.githubusercontent.com/81206228/190072232-3ee55675-4356-4e7f-aa4d-f597ce8cf507.jpeg" width="200"/>|<img src="https://user-images.githubusercontent.com/81206228/190072238-85c2a4e2-b2d9-49a6-b00e-c037a4aa84e1.jpeg" width="200"/>|
 
 ## ⚒️ Skill & Tech Stack
 <p>
